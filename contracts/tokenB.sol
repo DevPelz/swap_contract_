@@ -5,7 +5,7 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 contract TokenB is ERC20 {
     address public owner2;
-    uint256 amount = 1000;
+    uint256 amount = 1000 * 1e18;
 
     constructor() ERC20("TOKEN B", "TKB") {
         owner2 = msg.sender;

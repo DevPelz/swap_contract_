@@ -62,7 +62,7 @@ contract Swap {
 
         // transfer tokenB to user
         uint _tokenB = calculateTokenAForB(_amountA);
-        _safeTransferFrom(tokenB, address(this), msg.sender, _tokenB);
+        tokenB.transfer(msg.sender, _tokenB);
 
         reserveA += _amountA;
         reserveA -= _tokenB;
@@ -78,7 +78,7 @@ contract Swap {
 
         // transfer tokenA to user
         uint _tokenA = calculateTokenBForA(_amountB);
-        _safeTransferFrom(tokenA, address(this), msg.sender, _tokenA);
+        tokenA.transfer(msg.sender, _tokenA);
 
         reserveA += _amountB;
         reserveA -= _tokenA;
@@ -88,7 +88,7 @@ contract Swap {
         uint _amountA
     ) internal view returns (uint tokenB_to_recieve) {
         uint K = reserveA * reserveB;
-        uint Diff_in_A = reserveA - _amountA;
+        uint Diff_in_A = reserveA + _amountA;
         uint div_K_by_A = K / Diff_in_A;
 
         tokenB_to_recieve = reserveB - div_K_by_A;
@@ -98,7 +98,7 @@ contract Swap {
         uint _amountB
     ) internal view returns (uint tokenA_to_recieve) {
         uint K = reserveA * reserveB;
-        uint Diff_in_B = reserveB - _amountB;
+        uint Diff_in_B = reserveB + _amountB;
         uint div_K_by_A = K / Diff_in_B;
 
         tokenA_to_recieve = reserveB - div_K_by_A;

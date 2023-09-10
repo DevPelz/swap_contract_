@@ -7,7 +7,7 @@ async function main() {
   await TokenA.waitForDeployment();
 
   console.log(
-    `Token deployed to ${TokenA.target}`
+    `Token deployedA to ${TokenA.target}`
   );
 }
 

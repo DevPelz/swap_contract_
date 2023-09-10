@@ -7,7 +7,7 @@ async function main() {
   await TokenB.waitForDeployment();
 
   console.log(
-`Token deployed to ${TokenB.target}`
+`TokenB deployed to ${TokenB.target}`
   );
 }
 
@@ -15,3 +15,4 @@ main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });
+
