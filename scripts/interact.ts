@@ -5,7 +5,7 @@ async function main() {
 
   const tokenA = "0x7E0574e87c0040f837b6214158f27d5bB50330B7";
   const tokenB = "0x04f24c5514491AD0843480aCAe707319B3FCb176";
-  const swap = "0x9A7BD09e228a204cE6dd5D01739FEf302Ce37033";
+  const swap = "0xC01d33a5759E4622d1eB8E8FC01bbc0B589229EF";
   const signer = "0x764693DD666E8dD9275CDE8F05C6B07446B1d941";
 
   const tokenAContract = await ethers.getContractAt("IERC", tokenA );
@@ -63,8 +63,9 @@ async function main() {
 
   console.log(`signer balance of tokenA after swap: ${await tokenAContract.balanceOf(signer)}`);
 
-  console.log("===========removing_liqidity=============")
+  console.log("===========removing_liqidity=============");
   await swapContract.connect(impersonatedSiger).removeLiquidity(AddTokenA, AddTokenB);
+  console.log("=============removed liquidity============");
 }
 
 
