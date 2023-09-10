@@ -42,8 +42,14 @@ contract Swap {
     }
 
     function removeLiquidity(uint256 _amountA, uint256 _amountB) external {
-        tokenA.transferFrom(address(this), msg.sender, _amountA);
-        tokenB.transferFrom(address(this), msg.sender, _amountB);
+        LiquidityProvider storage _Lp = _liquidityProvider[msg.sender];
+
+        require(
+            _Lp.amountA >= _amountA && _Lp.amountB >= _amountB,
+            "SWAP: insufficient liquidy balance"
+        );
+        tokenA.transfer(msg.sender, _amountA);
+        tokenB.transfer(msg.sender, _amountB);
 
         reserveA -= _amountA;
         reserveB -= _amountB;
