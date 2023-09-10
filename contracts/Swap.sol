@@ -80,8 +80,8 @@ contract Swap {
         uint _tokenA = calculateTokenBForA(_amountB);
         tokenA.transfer(msg.sender, _tokenA);
 
-        reserveA += _amountB;
-        reserveA -= _tokenA;
+        reserveB += _amountB;
+        reserveB -= _tokenA;
     }
 
     function calculateTokenAForB(

@@ -3,9 +3,9 @@ import { ethers } from "hardhat";
 async function main() {
 //   const signer = await ethers.getSigners();
 
-  const tokenA = "0x607A57dA8B47f3a3965299B282bE5115B3bC6508";
-  const tokenB = "0x759085D523aD2636fa166E31fc8d4A6d5114B6E0";
-  const swap = "0x7CD57d3108FF14E7BB0B67aDe5dc6A5794ECF17a";
+  const tokenA = "0x7E0574e87c0040f837b6214158f27d5bB50330B7";
+  const tokenB = "0x04f24c5514491AD0843480aCAe707319B3FCb176";
+  const swap = "0x9A7BD09e228a204cE6dd5D01739FEf302Ce37033";
   const signer = "0x764693DD666E8dD9275CDE8F05C6B07446B1d941";
 
   const tokenAContract = await ethers.getContractAt("IERC", tokenA );
@@ -41,7 +41,7 @@ async function main() {
 //   console.log("===================================");
 
   const swapA = ethers.parseUnits(String(50), 0);
-  const swapB = ethers.parseUnits(String(10), 0);
+  const swapB = ethers.parseUnits(String(1), 0);
 
 
   await swapContract.connect(impersonatedSiger).addLiquidity(AddTokenA, AddTokenB);
