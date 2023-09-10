@@ -8,7 +8,7 @@ contract TokenA is ERC20 {
     uint256 amount = 1000;
 
     constructor() ERC20("TOKEN A", "TKA") {
-        owner1 = 0x764693DD666E8dD9275CDE8F05C6B07446B1d941;
+        owner1 = msg.sender;
         _mint(owner1, amount);
     }
 }
