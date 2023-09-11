@@ -11,8 +11,12 @@ const config: HardhatUserConfig = {
       url: process.env.SEPOLIA_RPC,
       //@ts-ignore
       accounts: [process.env.PRIVATEKEY]
-    },
-  }
+    }
+  },
+
+   etherscan: {
+    apiKey:process.env.ETHERSCAN_API_KEY,   
+  },
 };
 
 export default config;
