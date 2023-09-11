@@ -1,4 +1,4 @@
-# Swap Contract README
+# Swap Contract
 
 This README provides an overview of the **Swap** smart contract, designed for exchanging two different ERC-20 tokens, and includes details on how to use the contract.
 
@@ -19,7 +19,7 @@ The **Swap** contract is a Solidity smart contract developed for swapping ERC-20
 
 - Liquidity Providers: Users can become liquidity providers by adding tokens to the contract's reserves and removing them when needed.
 
-- Token Swaps: Users can swap `tokenA` for `tokenB` or vice versa based on the current liquidity pool's reserves and exchange rate.
+- Token Swaps: Users can swap `tokenA` for `tokenB` or vice versa based on the current liquidity pool's reserves and exchange rate using `x * y = k` where `k` is constant.
 
 - Secure Transfers: The contract uses a `_safeTransferFrom` function to ensure secure ERC-20 token transfers.
 
